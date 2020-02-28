@@ -1,6 +1,11 @@
 <?php
     echo "\nTool for removing rabbit\n";
-    $testo = shell_exec("find " . $argv[1] . " -name '" . $argv[2] . "'");
+    $disk = strtolower($argv[1]);
+    if(strpos(" ", $argv[2]))
+    {
+	$argv[2] = str_replace(" ", "\ ", $argv[2]);
+    }
+    $testo = shell_exec("find /mnt/" . $disk . "/ -name '" . $argv[2] . "'");
     $file = fopen("result.txt", "w");
     fwrite($file, $testo);
     fclose($file);
