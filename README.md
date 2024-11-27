@@ -1,4 +1,4 @@
-# Remove rabbit
+# Rabbit removal
 
 ## Overview
 
